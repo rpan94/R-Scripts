@@ -104,6 +104,12 @@ colnames(mtc)
 p <- ggplot(mtc, aes(log2FoldChange, -log10(pvalue))) +
   geom_point(aes(col=Dam.Gene), size =1, alpha = 1) + scale_color_manual(values=c("grey", "red")) + 
   theme_bw(base_size = 10) 
+#plot over points
+p <- ggplot(mtc, aes(log2FoldChange, -log10(pvalue))) +
+  geom_point(aes(col=Dam.Gene), size =1, alpha = 1, color = 'grey') + 
+  geom_point(data = subset(mtc, Dam.Gene == 'Yes'), color = 'red')
+p
+#
 p
 library(ggrepel)
 #Select your gene of interest using the row number of excel sheet
