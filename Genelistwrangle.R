@@ -24,6 +24,7 @@ dim(mtc)
 head(mtc)
 min(mtc$WtP2)
 max(mtc$WtP2)
+#Add Gene sysmbol enrez ID annotations to the existing gene list
 library("AnnotationDbi")
 library("org.Mm.eg.db")
 columns(org.Mm.eg.db)
